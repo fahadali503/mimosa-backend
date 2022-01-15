@@ -5,19 +5,19 @@ import { ok, strictEqual } from 'assert';
 import { Context, createController, getHttpMethod, getPath, isHttpResponseOK } from '@foal/core';
 
 // App
-import { ApiController } from './api.controller';
+import { AuthController } from './auth.controller';
 
-describe('ApiController', () => {
+describe('AuthController', () => {
 
-  let controller: ApiController;
+  let controller: AuthController;
 
-  beforeEach(() => controller = createController(ApiController));
+  beforeEach(() => controller = createController(AuthController));
 
   describe('has a "foo" method that', () => {
 
     it('should handle requests at GET /.', () => {
-      strictEqual(getHttpMethod(ApiController, 'foo'), 'GET');
-      strictEqual(getPath(ApiController, 'foo'), '/');
+      strictEqual(getHttpMethod(AuthController, 'foo'), 'GET');
+      strictEqual(getPath(AuthController, 'foo'), '/');
     });
 
     it('should return an HttpResponseOK.', () => {

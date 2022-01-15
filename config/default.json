@@ -4,6 +4,10 @@
     "loggerFormat": "tiny",
     "session": {
       "store": "@foal/typeorm"
+    },
+    "jwt": {
+      "secret": "Ak0WcVcGuOoFuZ4oqF1tgqbW6dIAeSacIN6h7qEyJM8=",
+      "secretEncoding": "base64"
     }
   },
   "database": {
