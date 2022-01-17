@@ -8,10 +8,16 @@
     "jwt": {
       "secret": "Ak0WcVcGuOoFuZ4oqF1tgqbW6dIAeSacIN6h7qEyJM8=",
       "secretEncoding": "base64"
+    },
+    "disk": {
+      "driver": "local",
+      "local": {
+        "directory": "uploads"
+      }
     }
   },
   "database": {
-    "type": "better-sqlite3",
-    "database": "./db.sqlite3"
+    "type": "mongodb",
+    "url": "mongodb://localhost:27017/mimosa"
   }
 }
