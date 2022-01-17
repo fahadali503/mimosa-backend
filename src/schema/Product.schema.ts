@@ -25,6 +25,8 @@ export class ProductClass {
     @prop({ type: Boolean, })
     isFeatured: boolean;
 
+    @prop({ type: Boolean, default: false })
+    isPublished: boolean
 
     @prop({ ref: 'User' })
     user: Ref<UserClass>
