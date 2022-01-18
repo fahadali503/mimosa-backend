@@ -45,14 +45,29 @@ export class ProductController {
   }
 
 
-  @Get('/featured')
+  @Get('/seller/featured')
   async getSellerFeaturedProducts(ctx: Context) {
     const { id } = ctx.user;
-    console.log(id)
     const products = await ProductSchema.find({ isFeatured: true, user: id });
     return new HttpResponseOK({
       products
     })
+  }
+  @Get('/seller/products')
+  async getSellerProducts(ctx: Context) {
+    const { id } = ctx.user;
+    const products = await ProductSchema.find({ user: id });
+    return new HttpResponseOK(
+      products)
+  }
+
+  @Get('/seller/product')
+  async getSellerProduct(ctx: Context) {
+    const { id } = ctx.user;
+    const productId = ctx.request.query.id;
+    console.log(productId)
+    const product = await ProductSchema.findById(productId);
+    return new HttpResponseOK(product)
   }
 
 }
